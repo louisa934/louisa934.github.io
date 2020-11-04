@@ -1,0 +1,111 @@
+<!-- aframe documentation: https://aframe.io/docs/1.0.0/introduction/ -->
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>aframe empty template</title>
+	<script src="./libraries/aframe-1.0.4.min.js"></script>
+	<script src="./libraries/aframe_ply_pointcloud_loader.js"></script>
+</head>
+
+<body>
+
+	<!-- <p>
+		Fritz Lang
+	</p> -->
+
+
+		</a-scene>
+
+
+		<a-scene vr-mode-ui="enabled: false"
+						 loading-screen="enabled: false">
+
+			<!-- pre-load your assets(models, videos, images etc.) here -->
+			<a-assets>
+
+				<a-asset-item id="statue_small_centered.glb" src="./models/statue_small_centered.glb" response-type="arraybuffer"></a-asset-item>
+				<a-asset-item id="Shiny.glb" src="./models/Shiny.glb" response-type="arraybuffer"></a-asset-item>
+				<a-asset-item id="Glossy.glb" src="./models/Glossy.glb" response-type="arraybuffer"></a-asset-item>
+				<a-asset-item id="Bronze.glb" src="./models/Bronze.glb" response-type="arraybuffer"></a-asset-item>
+				<audio id="dreams" src="./sound/dreams.mp3" preload="auto"> </audio>
+
+
+			</a-assets>
+
+			<!-- Scene camera -->
+			<a-entity camera look-controls position="0 1.6 0" wasd-controls="acceleration:900"></a-entity>
+
+
+
+			<!-- Text entity -->
+			<a-text position="-10 -10 0"
+								width="800"
+								font="./BigCaslon-msdf.json"
+								font-image="./BigCaslon-msdf.png"
+								negate="false"
+								color="black"
+								value="FRITZ"
+								rotation="90 0 -180"
+								>
+			</a-text>
+
+
+      <a-sound src="./sound/dreams.mp3"
+							 autoplay="true"
+							 position="0 2 5"
+							 <
+			</a-sound>
+
+
+			<!-- Normal-->
+			<a-entity	id="statue_small_Centered"
+								gltf-model="#statue_small_centered.glb"
+								position="0 -5 -100"
+								animation="property: position; to: -0 -5 0; dur: 70000; easing: linear; loop: true; delay: 2500;"
+								scale="2 2 2"
+								rotate= "0 190 360"
+							   >
+			</a-entity>
+
+
+			<!-- Polyester-->
+			<a-entity	id="Shiny"
+								gltf-model="#Shiny.glb"
+								position="90 -5 -100"
+								scale="1 1 1"
+								animation="property: position; to: -0 -5 0; dur: 70000; easing: linear; loop: true; delay: 2500;"
+								>
+			</a-entity>
+
+
+			<!-- Glossy-->
+			<a-entity	id="Polyester_glossy"
+								gltf-model="#Glossy.glb"
+								position="-100 -5 -100"
+								scale="4 4 4"
+								animation="property: position; to: -0 -5 0; dur: 70000; easing: linear; loop: true; delay: 2500;"
+								>
+			</a-entity>
+
+			<!-- Bronze-->
+			<a-entity	id="Bronze"
+								gltf-model="#Bronze.glb"
+								position="00 -100 -100"
+								rotation="90 180 00"
+								scale="4 4 4"
+								animation="property: position; to: -0 -5 0; dur: 70000; easing: linear; loop: true; delay: 2500;"
+								>
+			</a-entity>
+
+
+
+
+
+
+		</a-scene>
+</body>
+</html>
